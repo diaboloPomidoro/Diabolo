@@ -1,8 +1,12 @@
 package TypeOfObjects;
 
-/**
- * Created by Diabolo on 02.04.2017.
- */
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.StringTokenizer;
+
+
 public class Person {
     private int id;
     private String firstName;
@@ -55,5 +59,17 @@ public class Person {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String
+    toString() {
+        return "Person{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", education='" + education + '\'' +
+                '}';
     }
 }

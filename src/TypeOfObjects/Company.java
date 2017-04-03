@@ -45,6 +45,10 @@ public class Company {
     public void setCapital(double capital) {
         this.capital = capital;
     }
+    public void setCapital(String capital) {
+        double capitalToDouble = Double.parseDouble(capital);
+        this.capital = capitalToDouble;
+    }
 
     public Date getDateOfCreation() {
         return dateOfCreation;
@@ -57,5 +61,16 @@ public class Company {
     public void setDateOfCreation(String dateOfCreation) throws ParseException {
         Date dateOfCreationDate = formatter.parse(dateOfCreation);
         this.dateOfCreation = dateOfCreationDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", capital=" + capital +
+                ", dateOfCreation=" + dateOfCreation +
+                ", formatter=" + formatter +
+                '}';
     }
 }

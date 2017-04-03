@@ -62,4 +62,24 @@ public class Relation {
         int intNodeId = Integer.parseInt(nodeId);
         this.nodeId = intNodeId;
     }
+
+    public String getNodeDescriptio(int nodeId){
+        String description = null;
+        for(Enums.Nodes e : Enums.Nodes.values()){
+            if (nodeId == e.getNodeId()){
+                return description = e.getDescription();
+            }
+        }return "no info";
+    }
+
+    @Override
+    public String toString() {
+        return "Relation{" +
+                "Id=" + Id +
+                ", idPerson=" + idPerson +
+                ", idCompany=" + idCompany +
+                ", nodeId=" + nodeId +
+                ", nodeDescription=" + getNodeDescriptio(nodeId)+
+                '}';
+    }
 }

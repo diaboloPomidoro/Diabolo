@@ -8,7 +8,8 @@ public class Enums {
     public enum EntityType {
         PERSON(5,";"),
         COMPANY(4,";"),
-        RELATION(4,";");
+        RELATION(4,";"),
+        MISTAKE(0,"");
 
         private final int COLLUMNS_QUANTITY;
         private final String DELIMITER;
@@ -28,18 +29,26 @@ public class Enums {
     }
 
     public enum Nodes {
-        OWNER(100),
-        PRESIDENT(200),
-        MEMBER_OF_THE_BOARD(300);
+        OWNER(100,"owner"),
+        PRESIDENT(200,"president"),
+        MEMBER_OF_THE_BOARD(300,"member of the board");
 
         private final int nodeId;
+        private final String description;
 
-        Nodes(int nodeId) {
+        Nodes(int nodeId, String description) {
             this.nodeId = nodeId;
+            this.description = description;
+        }
+
+        public String getDescription() {
+            return description;
         }
 
         public int getNodeId() {
             return nodeId;
         }
     }
+
+
 }
